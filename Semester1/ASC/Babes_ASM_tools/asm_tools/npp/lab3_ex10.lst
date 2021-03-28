@@ -1,0 +1,67 @@
+     1                                  ;d-(7-a*b+c)/a-6+x/2; a,c-byte; b-word; d-doubleword; x-qword
+     2                                  ; a = 2 c = 1 b = 2 d = 10 x = 80;
+     3                                  ; 10-(7-2*2+1)/2-6+80/2 = 10 - (7-5)/2 -6 + 40 = 10 - 1 - 6 + 40 = 43
+     4                                  
+     5                                  ; REZOLVARE PENTRU INTERPRETAREA FARA SEMN
+     6                                  
+     7                                  
+     8                                  bits 32 ; assembling for the 32 bits architecture
+     9                                  
+    10                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+    11                                  global start        
+    12                                  
+    13                                  ; declare external functions needed by our program
+    14                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+    15                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    16                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    17                                  
+    18                                  ; our data is declared here (the variables needed by our program)
+    19                                  segment data use32 class=data
+    20 00000000 02                          a db 2
+    21 00000001 01                          c db 1
+    22 00000002 0200                        b dw 2
+    23 00000004 0A000000                    d dd 10
+    24 00000008 5000000000000000            x dq 80
+    25                                  
+    26                                  ; our code starts here
+    27                                  segment code use32 class=code
+    28                                      start:
+    29 00000000 A0[00000000]                    mov al, [a]; AL = a
+    30 00000005 B400                            mov ah, 0 ; am convertit [a] din byte in word 
+    31 00000007 66F725[02000000]                mul WORD [b]; DX:AX = AL * [b] = a * b
+    32 0000000E 8A0D[01000000]                  mov cl, [c]; Cl = c
+    33 00000014 B500                            mov ch, 0; am convertit [c] din byte in word 
+    34 00000016 66BB0000                        mov bx, 0; am convertit [c] din word in double word BX:CX = [c]
+    35 0000001A 6601C8                          add ax, cx; 
+    36 0000001D 6611DA                          adc dx, bx; in DX:AX avem a*b+c si am tratat cazul cu carry 
+    37 00000020 66B90700                        mov cx, 7; 
+    38 00000024 66BB0000                        mov bx, 0; l-am convertit pe 7 in double word BX:CX = 7
+    39 00000028 6629C1                          sub cx,ax; 
+    40 0000002B 6619D3                          sbb bx,dx; am facut operatia BX:CX = 7-a*b+c tinand cont si de borrow
+    41 0000002E 6689DA                          mov dx, bx; 
+    42 00000031 6689C8                          mov ax, cx; am mutat rezultatul din BX:CX in DX:AX pentru a putea imparti
+    43 00000034 8A0D[00000000]                  mov cl, [a]; 
+    44 0000003A B500                            mov ch, 0; am convertit [a] din byte in word
+    45 0000003C 66F7F1                          div cx; in AX avem rezultatul impartirii AX = DX:AX / CX
+    46 0000003F 66BA0000                        mov dx, 0; am ignorat restul impartirii de mai sus si am convertit rezultatul impartirii din nou in doubleword
+    47 00000043 668B0D[04000000]                mov cx, word[d]; 
+    48 0000004A 668B1D[08000000]                mov bx, word[d+4]; in BX:CX l-am pus pe d
+    49 00000051 6629C1                          sub cx, ax;
+    50 00000054 6619D3                          sbb bx, dx; am efectuat scaderea BX:CX = BX:CX - DX:AX
+    51 00000057 66BA0000                        mov dx, 0;
+    52 0000005B 66B80600                        mov ax, 6; am facut 6 double word
+    53 0000005F 6629C1                          sub cx,ax;
+    54 00000062 6619D3                          sbb bx,dx; am efectuat scaderea cu 6: BX:CX = BX:CX - DX:AX
+    55 00000065 A1[08000000]                    mov eax, dword[x]; 
+    56 0000006A 8B15[10000000]                  mov edx, dword[x+8]; EDX:EAX = [x]
+    57 00000070 6653                            push bx; 
+    58 00000072 6651                            push cx; pune BX:CX pe stiva
+    59 00000074 5B                              pop ebx; scoatem BX:CX de pe stiva si al punem in EBX
+    60 00000075 B902000000                      mov ecx, 2; ECX = 2
+    61 0000007A F7F1                            div ecx; EAX = EDX:EAX / 2
+    62 0000007C 01D8                            add eax, ebx; EAX = rezultatul final
+    63                                          
+    64                                          
+    65                                          
+    66 0000007E 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    67 00000080 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

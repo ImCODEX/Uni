@@ -1,0 +1,7 @@
+6;4;400;Blau;1
+12;1;50;Lila;0
+-
+Orphy;Nimbelton;[]
+Jacob;Michels;[]
+Lawrence;Jimbelton;[]
+-

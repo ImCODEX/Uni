@@ -1,0 +1,10 @@
+1;3;200;Rot;0
+2;2;150;Grun;1
+-
+Bob;Derryl;[1, 2]
+Emil;Dorel;[1, 2]
+Jeremy;Neuerman;[3]
+-
+1;[Bob:Derryl, Emil:Dorel];2;21-11-2020;24-11-2020
+2;[Bob:Derryl, Emil:Dorel];1;25-11-2020;27-11-2020
+3;[Jeremy:Neuerman];2;03-01-2021;04-01-2021

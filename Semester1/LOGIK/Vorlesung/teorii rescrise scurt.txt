@@ -1,0 +1,22 @@
+Pradikatenlogik:
+
+Functie - constante (fara argument), sau cu argument
+Argumente = variabile, constante sau alte functii
+Term - functie ale caror argumente sunt alte functii sau variabile sau constante (f(g(yz))*h(x))
+Predicate - au argumente(da poate si sa n-aiba), argumentele au voie sa fie doar Termi (deci nu alte predicate)
+Atom = Predicate fara negatie in fata (simple) 
+Literal = atom sau atom negat
+Klausel = disjunctie de literale
+
+Atom => Literal, Klausel, Formel
+Literal => Klausel, Formel
+Klausel => Formel
+Are Quantori? => Formel
+
+Occur Failure - cand variabila apare in expresia cu care vreau sa o substitui
+Clash Failure - expresiile care doresc sa le unific incep cu alte litere (sau cand incerci sa unifici pe a cu b unde a,b - constante)
+
+NNF = fara implicatie, echivalenta, iar negatia sta in fata atomului (si fara negatie dubla)
+Bereinigt = nu exista variabila care sa fie si libera si legata (de quantor), iar fiecare variabila e maxim o data quantificata
+PNF = daca are quantori is toti in stanga (bereinigt si NNF)
+SNF = PNF + fara quantorul existential

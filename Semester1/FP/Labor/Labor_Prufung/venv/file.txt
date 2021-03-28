@@ -1,0 +1,6 @@
+Nu,1,hgb
+ab,maieu,13,_
+word,2
+antu,7
+3,u,&|
+5,ae,ab

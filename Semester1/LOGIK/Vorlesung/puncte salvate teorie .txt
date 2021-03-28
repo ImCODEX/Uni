@@ -1,0 +1,27 @@
+POINTS OF INTEREST LOGIK:
+73 - modell einer formelmenge
+95 - folgerung
+99 - unerfullbarkeit, allgemeingultigkeit und folgerung
+112 - Echivalente importante mai multe
+134 - NormalFormen, Atom, Literale, etc
+~147 - KNF/DNF ALGORITHM
+189 - Suchbaum
+~195 - DPLL
+240 - Hornformel
+357 - Exemplu formel, term, literal, etc
+390 - Anwendungen einer Substitution
+~420 - don't know what that is
+428 - Pradikatenlogik Syntax
+433 - gultigkeit erfullbarkeit
+439 - Proprietati Quantori
+~457 - Beweiss substitutionen und valuationen, Substitutionlema
+473 - NNF
+474 - Bereinigt 
+~476 - PNF
+479 - SNF
+491 - SNF to KNF
+506 - Reguli Unifikation
+515 - Exemplu unificare
+548 - lineare Resolution?
+556 - Horn-Klauseln
+578 - Herbrand-Struktur
