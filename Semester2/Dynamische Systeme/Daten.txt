@@ -1,7 +1,0 @@
-labor 7 - Test: nicht mindestens 5, 20%
-florin.albisoru@math.ubbcluj.ro
-andrei.albisoru@ubbcluj.ro
-
-test: Wir bekommen ein Dokument mit Ubungen 
-- dauert eine Stunde
-- schiken im PDF 
