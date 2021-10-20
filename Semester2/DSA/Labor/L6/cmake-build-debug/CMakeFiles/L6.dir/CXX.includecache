@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SMMIterator.h
+SortedMultiMap.h
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SortedMultiMap.h
+
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SMMKIterator.cpp
+SMMKIterator.h
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SMMKIterator.h
+SortedMultiMap.h
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SortedMultiMap.h
+
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SMMKIterator.h
+SortedMultiMap.h
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SortedMultiMap.h
+
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SortedMultiMap.cpp
+SMMIterator.h
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SMMIterator.h
+SMMKIterator.h
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SMMKIterator.h
+SortedMultiMap.h
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SortedMultiMap.h
+iostream
+-
+vector
+-
+exception
+-
+
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L6/SortedMultiMap.h
+vector
+-
+utility
+-
+
