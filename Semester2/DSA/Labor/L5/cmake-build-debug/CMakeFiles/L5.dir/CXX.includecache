@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L5/Bag.cpp
+Bag.h
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L5/Bag.h
+BagIterator.h
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L5/BagIterator.h
+exception
+-
+iostream
+-
+cmath
+-
+
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L5/Bag.h
+
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L5/BagIterator.h
+Bag.h
+C:/Users/Razvan/OneDrive/Documents/UBBIG/Semester2/DSA/Labor/L5/Bag.h
+
